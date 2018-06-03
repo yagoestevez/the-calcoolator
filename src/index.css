@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Kaushan+Script');
 
-/* Hide the testing button */
+/* Prettify the testing button */
 #hamburger_top, #hamburger_middle, #hamburger_bottom {
   background: hsl(230, 30%, 20%) !important;
 }
