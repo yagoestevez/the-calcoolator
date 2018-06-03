@@ -2,13 +2,17 @@
   "name": "calcoolator",
   "version": "1.0.0",
   "description": "A project made for the FreeCodeCamp certification",
+  "homepage": "https://spaniarddev.github.io/the-calcoolator/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "gh-pages": "^1.2.0",
     "npm": "^6.1.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
