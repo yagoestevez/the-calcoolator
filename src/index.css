@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Kaushan+Script');
 
 /* Hide the testing button */
-div.fcc_test_ui {
-  opacity           : 0;
+#hamburger_top, #hamburger_middle, #hamburger_bottom {
+  background: hsl(230, 30%, 20%) !important;
+}
+#fcc_foldout_toggler_background {
+  background: none !important;
 }
 
 :root, * {
