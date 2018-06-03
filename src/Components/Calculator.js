@@ -15,13 +15,15 @@ class Calculator extends Component {
       '.', '0', '=', '+'
     ];
     this.state = {
-      expression  : 'do your math',
-      result      : '0',
-      showMenu    : false,
-      loadTheme   : ''
+      expression   : 'do your math',
+      result       : '0',
+      showMenu     : false,
+      loadTheme    : '',
+      manyDecimals : false 
     };
-    this.PLACEHOLDER = 'do your math';
-    this.ERROR       = 'Bad Expression!';
+    this.PLACEHOLDER  = 'do your math';
+    this.ERROR        = 'Bad Expression!';
+    this.manyDecimals = false;
     this.themes       = {
       list: ['', 'Yellow.css', 'Blue.css', 'Green.css', 'Light.css'],
       curr: 0
@@ -31,7 +33,8 @@ class Calculator extends Component {
   clearDisplay = ( ) => {
     this.setState({
       expression: '0',
-      result: '0'
+      result: '0',
+      manyDecimals: false
     });
   }
 
@@ -81,8 +84,8 @@ class Calculator extends Component {
 
   doMath = ( currExpr ) => {
     // TODO: Convert resulting large decimal numbers into exponents.
-    let result      = this.state.result;
-    let updateExpr  = this.state.expression;
+    let result       = this.state.result;
+    let updateExpr   = this.state.expression;
     currExpr = this.formatExpression( currExpr );
     if ( isNaN( currExpr[currExpr.length-1] ) ) {
       this.setState({
@@ -96,10 +99,14 @@ class Calculator extends Component {
       return;
     } else {
       result = updateExpr = currExpr !== '' ? new Function(`return ${currExpr}`)() : '';
+      if ( String(result).indexOf('.') !== -1 )
+        if ( String(result).split('.')[1].length > 5 ) this.manyDecimals = true;
+        else this.manyDecimals = false;
     }
     this.setState({
-      result: result,
-      expression: updateExpr
+      result       : result,
+      expression   : updateExpr,
+      manyDecimals : this.manyDecimals
     });
   };
 
@@ -135,11 +142,30 @@ class Calculator extends Component {
       : null;
   }
 
+  componentWillMount ( ) {
+    document.addEventListener(
+      "keypress",
+      event => {
+        if ( !isNaN( event.key ) || event.key === '+' || event.key === '-' || event.key === '.' )
+          this.updateExpression( event.key );
+        else if ( event.key === '/' ) this.updateExpression( '÷' );
+        else if ( event.key === '*' ) this.updateExpression( '×' );
+        else if ( event.key === 'Enter' ) this.updateExpression( '=' );
+        else if ( event.key === 'Escape'  ) this.updateExpression( 'clear' );
+        else if ( event.key === 'Backspace'  ) this.updateExpression( '↶' );
+        else return
+      } );
+  }
+
+  componentWillUnmount ( ) {
+    document.removeEventListener('keypress');
+  }
+
   render() {
     return (
       <React.Fragment>
         { this.loadTheme() }
-        <Display expr={this.state.expression} result={this.state.result} />
+        <Display expr={this.state.expression} result={this.state.result} manyDecimals={this.state.manyDecimals} />
         <Brand />
         <Pads
           actions={this.actions}

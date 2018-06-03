@@ -20,7 +20,7 @@ const Pads = props => {
                   pad === '♥'
                     ? 'pad menuToggler'
                     : isNaN(pad) ? 'pad sym' : 'pad num' }
-                onClick={p => updateExpr(pad)}
+                onClick={() => updateExpr(pad)}
                 key={i} >{pad}
           </div>
         ))}

@@ -29,6 +29,7 @@ const Menu = props => {
             target="_blank"
             alt="Tweet to your friends"
             title="Tweet to your friends"
+            tabIndex="-1"
           >
             spread the word on Twitter
           </a>{' '}
@@ -43,6 +44,7 @@ const Menu = props => {
             rel="noopener noreferrer"
             alt="about spaniardDev"
             title="about spaniardDev"
+            tabIndex="-1"
           >
             spaniardDev
           </a>
