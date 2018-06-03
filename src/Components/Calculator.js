@@ -62,33 +62,10 @@ class Calculator extends Component {
   }
 
   addDecimal = ( currExpr, pad ) => {
-    // console.log( (currExpr+pad).match( /(\D\s)?\d+\./g ) );
     if ( (currExpr+pad).match( /(\D\s)?\d+\.\d*\./g ) )
       return currExpr;
     else
       return currExpr + pad;
-    // if ( (currExpr+pad).substr( currExpr.length ) === '.' )
-    //   return currExpr + pad;
-
-    // EVITAR:  1.1.1 + 1..1
-
-    // if ( currExpr.indexOf( '.' ) !== -1 )
-    //   if ( (currExpr+pad).match( /\D\s\d+\./g ) )
-    //     return currExpr + pad;
-    //   else
-    //     return currExpr;
-    // else
-    //   return currExpr + pad;
-
-    // if ( currExpr.indexOf( '.' ) !== -1 ) {
-    //   if ( (currExpr+pad).match( /\.\d.\D.\d+/g ) ) {
-    //     console.log( 'hay punto y casi otro' );
-    //     return currExpr+pad;
-    //   }
-    //   console.log( 'hay punto' );
-    //   return currExpr;
-    // }
-    // console.log( (currExpr+pad).match( /\.\d.\D.\d+\./g ) );
   }
 
   addOperator = ( currExpr, pad ) => {

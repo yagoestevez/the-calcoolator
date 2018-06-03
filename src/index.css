@@ -2,7 +2,7 @@
 
 /* Hide the testing button */
 div.fcc_test_ui {
-  display: none;
+  opacity           : 0;
 }
 
 :root, * {
@@ -27,28 +27,11 @@ body {
   font-size         : 1.5rem;
   color             : hsl(230, 100%, 90%);
   background        : hsl(220, 30%, 30%);
-  background        : -moz-radial-gradient(
-                      center,
-                      ellipse cover,
-                      #344c7e 20%,
-                      #283b60 80%
-  );
-  background        : -webkit-radial-gradient(
-                      center,
-                      ellipse cover,
-                      #344c7e 20%,
-                      #283b60 80%
-  ); /* Chrome10-25,Safari5.1-6 */
   background        : radial-gradient(
                       ellipse at center,
                       #344c7e 20%,
                       #283b60 80%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter            : progid:DXImageTransform.Microsoft.gradient(
-                      startColorstr='#344c7e',
-                      endColorstr='#283b60',
-                      GradientType=1
-  ); /* IExplorer */
+  );
 }
 
 /* Calculator */

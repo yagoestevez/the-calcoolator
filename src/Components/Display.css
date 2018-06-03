@@ -5,21 +5,6 @@
     #e61e5f 10%,
     #f73773 80%
   );
-  background      : -webkit-linear-gradient(
-      -45deg,
-      #e61e5f 10%,
-      #f73773 80%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background      : linear-gradient(
-      to 135deg,
-      #e61e5f 10%,
-      #f73773 80%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter          : progid:DXImageTransform.Microsoft.gradient(
-      startColorstr='#f73773',
-      endColorstr='#e61e5f',
-      GradientType=0
-  ); /* IExplorer */
   padding         : 3rem 1rem;
   border-radius   : 5px 5px 0 0;
   border-bottom   : 1px solid #fa6594;
