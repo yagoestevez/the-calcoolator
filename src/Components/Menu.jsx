@@ -2,7 +2,7 @@ import React from 'react';
 
 const tweet    = 'I just found a beautiful web-based calculator made with '
                + 'React! You should try it! '
-               + 'https://codepen.io/spaniarddev/full/ERVONM/ \n\n';
+               + 'https://spaniarddev.github.io/the-calcoolator/ \n\n';
 const tweetURL = 'https://twitter.com/intent/tweet?'
                   + 'hashtags=calculator,calcoolator,webdesign,FreeCodeCamp,'
                     + 'Coders,Dev,React,Javascript'
