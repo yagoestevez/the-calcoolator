@@ -9,4 +9,4 @@ There's still things to improve, such as:
 - Refactor the code to make it cleaner.
 
 ---
-Made with love by [spaniardDev](https://twitter.com/SpaniardDev/).
+by [spaniardDev](https://twitter.com/SpaniardDev/).
